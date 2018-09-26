@@ -1,0 +1,152 @@
+Header
+Header
+Header
+Define
+Double Constant
+This is Datatype
+This is Function
+Parameter Bracket Start
+This is Datatype
+This is Variable
+This is Datatype
+This is Variable
+Parameter Bracket End
+Block Begins Here
+If Detected
+Parameter Bracket Start
+This is Variable
+This is Relational_Operator
+This is Variable
+Parameter Bracket End
+Block Begins Here
+Function Return
+This is Variable
+Semicolon
+Block End Here
+Else Detected
+Block Begins Here
+Function Return
+This is Variable
+Semicolon
+Block End Here
+Block End Here
+This is Datatype
+This is Function
+Parameter Bracket Start
+Parameter Bracket End
+Block Begins Here
+This is Datatype
+This is Variable
+This is Variable
+This is Variable
+Semicolon
+This is Datatype
+This is Variable
+This is Variable
+This is Variable
+Semicolon
+This is Datatype
+This is Variable
+This is Operator
+Character Constant
+Semicolon
+This is Datatype
+This is Variable
+Integer Constant
+Semicolon
+For Detected
+Parameter Bracket Start
+This is Variable
+This is Operator
+Integer Constant
+Semicolon
+This is Variable
+Integer Constant
+Semicolon
+This is Variable
+This is Operator
+This is Variable
+This is Operator
+Integer Constant
+Parameter Bracket End
+Block Begins Here
+This is Function
+Parameter Bracket Start
+String
+AddressOf Operator found
+This is Variable
+This is Variable
+Semicolon
+Block End Here
+This is Variable
+This is Operator
+Integer Constant
+Semicolon
+This is Variable
+This is Operator
+Integer Constant
+Semicolon
+If Detected
+Parameter Bracket Start
+This is Variable
+This is Relational_Operator
+This is Variable
+Parameter Bracket End
+Block Begins Here
+This is Variable
+This is Operator
+This is Variable
+This is Operator
+This is Variable
+Semicolon
+This is Comment
+Block End Here
+Else if Detected
+Parameter Bracket Start
+This is Variable
+This is Relational_Operator
+This is Variable
+Parameter Bracket End
+Block Begins Here
+This is Variable
+This is Operator
+This is Variable
+This is Operator
+This is Variable
+Semicolon
+This is Comment
+Block End Here
+For Detected
+Parameter Bracket Start
+This is Variable
+This is Operator
+Integer Constant
+Semicolon
+This is Variable
+This is Relational_Operator
+Integer Constant
+Semicolon
+This is Variable
+This is Operator
+This is Variable
+This is Operator
+Integer Constant
+Parameter Bracket End
+Block Begins Here
+This is Function
+Parameter Bracket Start
+String
+This is Variable
+This is Variable
+Parameter Bracket End
+Function Return
+Integer Constant
+Semicolon
+Block End Here
+
+
+
+ KeyWord found = 71
+ Identifier Found = 42
+String Found = 2
+Constant Found = 12

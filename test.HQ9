@@ -1,0 +1,58 @@
+!Header << stdio.h >>
+!Header << math.h >>
+!Header << conio.h >>
+
+!Define PI 3.1416
+
+
+
+Type_Integer Func_Max PB Type_Integer Var_a, Type_Integer Var_b PE
+Block_Begin
+	If PB Var_a Ro_GT Var_b PE
+	Block_Begin
+		Return Var_a ;
+	Block_End
+	Else
+	Block_Begin
+		Return Var_b ;
+	Block_End
+Block_End
+
+
+
+Type_Integer Func_Main PB PE
+
+Block_Begin
+	
+	Type_Integer Var_a, Var_b, Var_c ;
+	Type_Double Var_d, Var_e, Var_f ;
+	Type_Char Var_g Op_Equ 'c';
+	Type_Integer Var_ara[105] ;
+	
+	For PB Var_c Op_Equ 0 ; Var_c RoLT 10 ; Var_c Op_Equ Var_c Op_Plus 1 PE
+	Block_Begin
+		Func_Console_Output PB "%int", AddressOf Var_ara[ Var_c ] ;
+	Block_End
+
+	Var_a Op_Equ 10 ;
+	Var_b Op_Equ 12 ;
+
+	If PB Var_b Ro_GT Var_a PE
+	Block_Begin
+		Var_a Op_Equ Var_a Op_Plus Var_b ; # a = a + b #
+	Block_End
+	
+	Else If PB Var_b Ro_LT Var_a PE
+	Block_Begin
+		Var_a Op_Equ Var_a Op_Minus Var_b ; # a = a - b #
+	Block_End
+
+	For PB Var_c Op_Equ 0 ; Var_c Ro_LE 10 ; Var_c Op_Equ Var_c Op_Plus 1  PE
+	Block_Begin
+		Func_Console_Output PB "The Number is : %int", Var_ara[ Var_c ] PE 
+	Blcok_End
+
+
+	Return 0 ;
+
+Block_End
