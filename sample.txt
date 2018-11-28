@@ -1,10 +1,10 @@
 Type_Integer Func_Main PB PE
 Block_Begin
-	Type_Integer Var_a Op_Equ 6;
+	Type_Integer Var_a Op_Equ 6 Op_Plus 5;
 	Type_Integer Var_aB Op_Equ Var_a;
 	Type_Integer Var_b Op_Equ 5,Var_c Op_Equ Var_b;
-	Func_PrintVariable PB Var_b PE;
-	Func_PrintVariable PB Var_b PE;
+	Func_PrintVariable PB Var_a PE;
+	Func_PrintVariable PB Var_aB PE;
 	Func_PrintString PB "Rifat" PE;
 	Func_PrintNewLine PB PE;
 	Func_PrintString PB "Nayan Mredul" PE;

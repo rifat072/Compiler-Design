@@ -42,6 +42,14 @@ Relational_Operator "Ro_GT"|"Ro_LT"|"Ro_GE"|"Ro_LE"|"Ro_And"|"Ro_Or"|"Ro_Equ"|"R
 "Block_End" { return BE;}
 
 "Op_Equ" {return ASGN;}
+"Op_Plus" {return PLUS;}
+"Op_Minus" {return MINUS;}
+"Op_Multiply" {return MULT;}
+"Op_Divide" {return DIV;}
+"Ro_LT" {return LT;}
+"Ro_GT" {return GT;}
+"Ro_LE" {return LE;}
+"Ro_GE" {return GE;}
 
 "\""(.)*"\"" {strcpy(yylval.text,yytext);return STR;}
 
