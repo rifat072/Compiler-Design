@@ -47,6 +47,11 @@ Block_Begin
 		Var_a Op_Equ Var_a Op_Minus Var_b ; # a = a - b #
 	Block_End
 
+	For PB Var_c To 10 IncrementBy 5 PE
+	Block Begin
+
+	Block End
+
 	For PB Var_c Op_Equ 0 ; Var_c Ro_LE 10 ; Var_c Op_Equ Var_c Op_Plus 1  PE
 	Block_Begin
 		Func_Console_Output PB "The Number is : %int", Var_ara[ Var_c ] PE 

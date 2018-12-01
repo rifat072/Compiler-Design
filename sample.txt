@@ -8,4 +8,60 @@ Block_Begin
 	Func_PrintString PB "Rifat" PE;
 	Func_PrintNewLine PB PE;
 	Func_PrintString PB "Nayan Mredul" PE;
+	Func_PrintString PB "--------------" PE;
+	Func_PrintNewLine PB PE;
+
+	Type_Integer Var_p Op_Equ 5, Var_q Op_Equ 7;
+
+
+
+	If PB Var_p Ro_LT Var_q PE
+	Block_Begin
+		Func_PrintString PB "Hello" PE;
+	Block_End
+	Else
+	Block_Begin
+		Var_b Op_Equ 5;
+	Block_End
+
+
+	If PB Var_p Ro_LT Var_q PE
+	Block_Begin
+		Func_PrintString PB "Hello" PE;
+	Block_End
+	ElseIf PB Var_p Ro_LT Var_q PE
+	Block_Begin
+		Var_b Op_Equ 72;
+	Block_End
+	Else
+	Block_Begin
+		Func_PrintVariable PB Var_b PE;
+	Block_End
+
+
+	If PB 5 Ro_GT 4 PE
+	Block_Begin
+		If PB 6 Ro_LE 6 PE
+		Block_Begin
+			Type_Integer Var_dd Op_Equ 77;
+		Block_End
+	Block_End
+
+
+	Var_a Op_Equ 6 Op_Plus Var_a;
+	Func_PrintVariable PB Var_a PE;
+	Type_Integer Var_st Op_Equ 1 Op_Plus 0;
+	Type_Integer Var_ed Op_Equ 10;
+
+
+	
+	For PB Var_st To Var_ed IncrementBy 1 PE
+	Block_Begin
+		For PB Var_st To Var_ed IncrementBy 1 PE
+		Block_Begin
+			Var_b Op_Equ 7;
+		Block_End
+	Block_End
+
+
 Block_End

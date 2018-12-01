@@ -51,6 +51,15 @@ Relational_Operator "Ro_GT"|"Ro_LT"|"Ro_GE"|"Ro_LE"|"Ro_And"|"Ro_Or"|"Ro_Equ"|"R
 "Ro_LE" {return LE;}
 "Ro_GE" {return GE;}
 
+"If" {return IF;}
+"Else" {return ELSE;}
+"ElseIf" {return ELSEIF;}
+
+"For" {return FOR;}
+"IncrementBy" {return INC;}
+"To" {return TO;}
+
+
 "\""(.)*"\"" {strcpy(yylval.text,yytext);return STR;}
 
 

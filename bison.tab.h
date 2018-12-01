@@ -63,7 +63,14 @@
      ASGN = 279,
      PRINTVAR = 280,
      PRINTSTR = 281,
-     PRINTLN = 282
+     PRINTLN = 282,
+     IF = 283,
+     ELSE = 284,
+     ELSEIF = 285,
+     FOR = 286,
+     INC = 287,
+     TO = 288,
+     IFX = 289
    };
 #endif
 
@@ -74,7 +81,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 45 "bison.y"
+#line 57 "bison.y"
 
   char text[1000];
   int val;
@@ -82,7 +89,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 86 "bison.tab.h"
+#line 93 "bison.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
