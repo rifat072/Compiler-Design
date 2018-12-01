@@ -29,6 +29,8 @@ Relational_Operator "Ro_GT"|"Ro_LT"|"Ro_GE"|"Ro_LE"|"Ro_And"|"Ro_Or"|"Ro_Equ"|"R
 "Func_PrintString" {return PRINTSTR;}
 "Func_PrintNewLine" {return PRINTLN;}
 
+"Func_"({char}|{digit}|{special})+ {return FUNCTION;}
+
 "Var_"({char}|{digit}|{special})+ { strcpy(yylval.text,yytext);return ID;}
 
 "Type_Integer" {  return INT;}
@@ -58,6 +60,10 @@ Relational_Operator "Ro_GT"|"Ro_LT"|"Ro_GE"|"Ro_LE"|"Ro_And"|"Ro_Or"|"Ro_Equ"|"R
 "For" {return FOR;}
 "IncrementBy" {return INC;}
 "To" {return TO;}
+
+"Switch" {return SWITCH;}
+"*" {return DEFAULT;}
+":" {return COL;}
 
 
 "\""(.)*"\"" {strcpy(yylval.text,yytext);return STR;}

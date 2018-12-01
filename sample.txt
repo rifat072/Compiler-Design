@@ -1,3 +1,9 @@
+Type_Integer Func_Max PB Type_Integer Var_a, Type_Integer Var_b PE
+Block_Begin
+
+Block_End
+
+
 Type_Integer Func_Main PB PE
 Block_Begin
 	Type_Integer Var_a Op_Equ 6 Op_Plus 5;
@@ -61,6 +67,23 @@ Block_Begin
 		Block_Begin
 			Var_b Op_Equ 7;
 		Block_End
+	Block_End
+
+	Switch PB 7 PE
+	Block_Begin
+		1:
+			Block_Begin
+
+			Block_End
+		7:
+			Block_Begin
+
+			Block_End
+
+
+		*:  Block_Begin
+
+			Block_End
 	Block_End
 
 

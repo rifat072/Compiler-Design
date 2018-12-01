@@ -5,6 +5,10 @@
 	#include<stdlib.h>
 	#include <string.h>
 
+	int switchdone = 0;
+	int switchvar;
+
+
     int ptr = 0;
     int value[1000];
     char varlist[1000][1000];
@@ -72,13 +76,16 @@
 
 
 
-%token INT DOUBLE CHAR MAIN PB PE BB BE SM CM ASGN PRINTVAR PRINTSTR PRINTLN PLUS MINUS MULT DIV LT GT LE GE IF ELSE ELSEIF FOR INC TO
+%token INT DOUBLE CHAR MAIN PB PE BB BE SM CM ASGN PRINTVAR PRINTSTR PRINTLN PLUS MINUS MULT DIV LT GT LE GE IF ELSE ELSEIF FOR INC TO SWITCH DEFAULT COL FUNCTION
 %nonassoc IFX
 %nonassoc ELSE
-
+%left SH
 
 
 %%
+
+starthere 	: function program function
+			;
 
 program		: INT MAIN PB PE BB statement BE { printf("\nCompilation Successful\n"); }
 			;
@@ -89,6 +96,7 @@ statement	: /* empty */
 			| statement ifelse
 			| statement assign
 			| statement forloop
+			| statement switch
 			;
 
 
@@ -211,7 +219,7 @@ expression : NUM {$$ = $1;}
 					{ $$ = $1 <= $3; }
 			| expression GE expression	
 					{ $$ = $1 >= $3; }
-			| PB expression PE		
+			| PB expression PE
 					{$$ = $2;}
 			;
 
@@ -271,6 +279,61 @@ forloop	: FOR PB expression TO expression INC expression PE BB statement BE
 					}
 
 /*------foor loop end------------*/
+
+
+/*------switch case begin--------*/
+
+switch	: SWITCH PB expswitch PE BB switchinside BE 
+		;
+
+expswitch 	:  expression 
+					{
+						switchdone = 0;
+						switchvar = $1;
+					}
+			;
+
+
+switchinside	: /* empty */
+				| switchinside expression COL BB statement BE 
+					{
+						if($2 == switchvar){
+							printf("Executed %d\n",$2);
+							switchdone = 1;
+						}					
+					}
+				| switchinside DEFAULT COL BB statement BE 
+					{
+						if(switchdone == 0){
+							switchdone = 1;
+							printf("Default Block executed\n");
+						}
+					}
+				;
+
+
+/*------switch case end----------*/
+
+/*------function begin-----------*/
+
+function 	: /* empty */
+			| function func
+			;
+
+func 	: type FUNCTION PB fparameter PE BB statement BE
+					{
+						printf("Function Declared\n");
+					}
+		;
+fparameter 	: /* empty */
+			| type ID fsparameter
+			;
+fsparameter : /* empty */
+			| fsparameter CM type ID
+			;
+
+
+/*-------function end------------*/
 %%
 
 
