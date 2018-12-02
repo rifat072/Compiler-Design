@@ -21,35 +21,25 @@ Block_Begin
 
 
 
-	If PB Var_p Ro_LT Var_q PE
+
+
+	If PB 5 Ro_LT 4 PE
 	Block_Begin
-		Func_PrintString PB "Hello" PE;
+
+	Block_End
+	ElseIf PB 5 Ro_LT 4 PE
+	Block_Begin
+
+	Block_End
+	ElseIf PB 5 Ro_LT 4 PE
+	Block_Begin
+
 	Block_End
 	Else
 	Block_Begin
-		Var_b Op_Equ 5;
-	Block_End
-
-
-	If PB Var_p Ro_LT Var_q PE
-	Block_Begin
-		Func_PrintString PB "Hello" PE;
-	Block_End
-	ElseIf PB Var_p Ro_LT Var_q PE
-	Block_Begin
-		Var_b Op_Equ 72;
-	Block_End
-	Else
-	Block_Begin
-		Func_PrintVariable PB Var_b PE;
-	Block_End
-
-
-	If PB 5 Ro_GT 4 PE
-	Block_Begin
-		If PB 6 Ro_LE 6 PE
+		If PB 5 Ro_GT 4 PE
 		Block_Begin
-			Type_Integer Var_dd Op_Equ 77;
+
 		Block_End
 	Block_End
 

@@ -8,6 +8,9 @@
 	int switchdone = 0;
 	int switchvar;
 
+	int ifval[1000];
+	int ifptr = -1;
+	int ifdone[1000];
 
     int ptr = 0;
     int value[1000];
@@ -229,36 +232,41 @@ expression : NUM {$$ = $1;}
 
 /*---------ifelse begin----------*/
 
+ifelse 	: IF PB ifexp PE BB statement BE elseif
+					{
 
-ifelse	: IF PB expression PE BB statement BE %prec IFX 
-					{
-						if($3){
-								printf("\nIf block will be executed\n");
-						}
-						
+						ifdone[ifptr] = 0;
+						ifptr--;
 					}
-		| IF PB expression PE BB statement BE ELSE BB statement BE 
+		;
+ifexp	: expression 
 					{
-						if($3){
-							printf("\nIf Block will be executed\n");
-						}
-						else{
-							printf("\nElse block will be exeucted\n");
-						}
-					}
-		| IF PB expression PE BB statement BE ELSEIF PB expression PE BB statement BE ELSE BB statement BE 	
-					{
-						if($3){
-							printf("\nIF Block will be executed\n");
-						}
-						else if($10){
-							printf("\nElse if block will be executed\n");
-						}
-						else{
-							printf("\nElse block will be executed\n");
+						ifptr++;
+						ifdone[ifptr] = 0;
+						if($1){
+							printf("\nIf executed\n");
+							ifdone[ifptr] = 1;
 						}
 					}
 		;
+elseif 	: /* empty */
+		| elseif ELSEIF PB expression PE BB statement BE 
+					{
+						if($4 && ifdone[ifptr] == 0){
+							printf("\nElse if block expressin %d executed\n",$4);
+							ifdone[ifptr] = 1;
+						}
+					}
+		| elseif ELSE BB statement BE
+					{
+						if(ifdone[ifptr] == 0){
+							printf("\nElse block executed\n");
+							ifdone[ifptr] = 1;
+						}
+					}
+
+		;
+
 /*---------ifelse end------------*/
 
 

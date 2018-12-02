@@ -86,7 +86,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 61 "bison.y"
+#line 64 "bison.y"
 
   char text[1000];
   int val;
