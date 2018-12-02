@@ -74,8 +74,10 @@
      DEFAULT = 290,
      COL = 291,
      FUNCTION = 292,
-     IFX = 293,
-     SH = 294
+     EQU = 293,
+     NEQU = 294,
+     IFX = 295,
+     SH = 296
    };
 #endif
 
@@ -86,7 +88,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 64 "bison.y"
+#line 68 "bison.y"
 
   char text[1000];
   int val;
@@ -94,7 +96,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 98 "bison.tab.h"
+#line 100 "bison.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

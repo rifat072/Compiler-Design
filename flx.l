@@ -10,6 +10,9 @@ Relational_Operator "Ro_GT"|"Ro_LT"|"Ro_GE"|"Ro_LE"|"Ro_And"|"Ro_Or"|"Ro_Equ"|"R
 %{
 	#include "bison.tab.h"
 	#include <string.h>
+	int yyparse();
+	int yylex();
+	int yyerror();
 %}
 
 
@@ -52,6 +55,8 @@ Relational_Operator "Ro_GT"|"Ro_LT"|"Ro_GE"|"Ro_LE"|"Ro_And"|"Ro_Or"|"Ro_Equ"|"R
 "Ro_GT" {return GT;}
 "Ro_LE" {return LE;}
 "Ro_GE" {return GE;}
+"Ro_Equ" {return EQU;}
+"Ro_NEqu" {return NEQU;}
 
 "ElseIf" {return ELSEIF;}
 "If" { return IF;}

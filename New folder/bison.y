@@ -5,10 +5,6 @@
 	#include<stdlib.h>
 	#include <string.h>
 
-	int yyparse();
-	int yylex();
-	int yyerror();
-
 	int switchdone = 0;
 	int switchvar;
 
@@ -83,7 +79,7 @@
 
 
 
-%token INT DOUBLE CHAR MAIN PB PE BB BE SM CM ASGN PRINTVAR PRINTSTR PRINTLN PLUS MINUS MULT DIV LT GT LE GE IF ELSE ELSEIF FOR INC TO SWITCH DEFAULT COL FUNCTION EQU NEQU
+%token INT DOUBLE CHAR MAIN PB PE BB BE SM CM ASGN PRINTVAR PRINTSTR PRINTLN PLUS MINUS MULT DIV LT GT LE GE IF ELSE ELSEIF FOR INC TO SWITCH DEFAULT COL FUNCTION
 %nonassoc IFX
 %nonassoc ELSE
 %left SH
@@ -91,10 +87,10 @@
 
 %%
 
-starthere 	: function program function { printf("\nCompilation Successful\n"); }
+starthere 	: function program function
 			;
 
-program		: INT MAIN PB PE BB statement BE 
+program		: INT MAIN PB PE BB statement BE { printf("\nCompilation Successful\n"); }
 			;
 statement	: /* empty */
 			| statement declaration
@@ -226,10 +222,6 @@ expression : NUM {$$ = $1;}
 					{ $$ = $1 <= $3; }
 			| expression GE expression	
 					{ $$ = $1 >= $3; }
-			| expression EQU expression
-					{ $$ = $1 == $3; }
-			| expression NEQU expression
-					{ $$ = $1 != $3; }
 			| PB expression PE
 					{$$ = $2;}
 			;
